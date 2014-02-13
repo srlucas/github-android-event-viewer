@@ -1,8 +1,3 @@
-github-andriod-event-viewer
-===========================
-
-Github event viewer android app!
-
 # Overview
 This app is built to showcase how to connect to a REST api endpoint (such as github), populate a nice List and then populate a ListView with the fetched information
 
