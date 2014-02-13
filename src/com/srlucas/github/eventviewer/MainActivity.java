@@ -51,6 +51,7 @@ public class MainActivity extends Activity {
 	private void prepareListView() {
 		// Construct the data source
 		ArrayList<Event> ghEvents = new ArrayList<Event>();
+		
 		// Create the adapter to convert the array to views
 		this.adapter = new EventsAdapter(this, ghEvents);
 		
