@@ -1,8 +1,8 @@
 package com.srlucas.github.eventviewer.network.github;
 
+import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
-import com.srlucas.github.eventviewer.network.BaseRestClient;
 
 /**
  * Github rest client. All github related stuff is here.
@@ -12,12 +12,15 @@ import com.srlucas.github.eventviewer.network.BaseRestClient;
  * @author srlucas
  *
  */
-public class GithubRestClient extends BaseRestClient {
+public class GithubRestClient {
+	
+	/** Actual Async client. */
+	protected static AsyncHttpClient client = new AsyncHttpClient();
 
 	/** Base URL. */
 	private static final String BASE_URL = "https://api.github.com/";
-	
-	/** Do a GET request to the given URL
+
+	/** Do GET request on the absolute url 
 	 * 
 	 * @param url the url to GET to
 	 * @param params params to send as the query string
@@ -32,7 +35,7 @@ public class GithubRestClient extends BaseRestClient {
 	 * @param relativeUrl action to call
 	 * @return full github url
 	 */
-	private static String getAbsoluteUrl(String relativeUrl) {
+	protected static String getAbsoluteUrl(String relativeUrl) {
 	    return BASE_URL + relativeUrl;
 	}
 }
