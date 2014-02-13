@@ -6,7 +6,7 @@
     android:padding="6dip" >
 
     <ImageView
-        android:id="@+id/icon"
+        android:id="@+id/ivUserAvatar"
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         android:layout_alignParentBottom="true"
@@ -21,7 +21,7 @@
 	   android:layout_height="wrap_content"
 	   android:layout_alignParentBottom="true"
 	   android:layout_alignParentRight="true"  
-	   android:layout_toRightOf="@id/icon"
+	   android:layout_toRightOf="@id/ivUserAvatar"
 	   android:ellipsize="marquee"
 	   android:singleLine="true"
 	   android:textSize="12sp"
@@ -35,7 +35,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_alignWithParentIfMissing="true"
-        android:layout_toRightOf="@id/icon"
+        android:layout_toRightOf="@id/ivUserAvatar"
         android:gravity="center_vertical"
         android:text="Repo"
         android:textSize="16sp" />

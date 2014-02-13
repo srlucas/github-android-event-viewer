@@ -7,8 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.srlucas.github.R;
 import com.srlucas.github.eventviewer.model.Event;
 
@@ -70,6 +72,10 @@ public class EventsAdapter extends ArrayAdapter<Event> {
 		viewHolder.user.setText(userString.toString());
 		
 //		viewHolder.type.setText(event.type);
+		
+		// now images
+		ImageView ivBasicImage = (ImageView) convertView.findViewById(R.id.ivUserAvatar);
+		ImageLoader.getInstance().displayImage(event.userAvatarUrl, ivBasicImage);
 		
 		// Return the completed view to render on screen
 		return convertView;

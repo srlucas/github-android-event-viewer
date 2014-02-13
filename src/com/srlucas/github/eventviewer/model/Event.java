@@ -7,6 +7,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/** Event model object
+ * 
+ * @author srlucas
+ */
 public class Event {
 	
 	public Long id;
@@ -17,6 +21,9 @@ public class Event {
 	public String repoUrl;
 	
 	public String user;
+	
+	/** Url to user avatar. */
+	public String userAvatarUrl;
 	
 	/** Default Constructor. Can only create events from JSON objects.
 	 * 
@@ -41,6 +48,7 @@ public class Event {
 			// user info
 			JSONObject user = src.getJSONObject("actor");
 			this.user = user.getString("login");
+			this.userAvatarUrl = user.getString("avatar_url");
 			
 		} catch (JSONException e) {
 			e.printStackTrace();
