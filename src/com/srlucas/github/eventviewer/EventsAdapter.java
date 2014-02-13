@@ -26,8 +26,6 @@ public class EventsAdapter extends ArrayAdapter<Event> {
 	
     // View lookup cache
     private static class ViewHolder {
-        TextView id;
-        TextView type;
         TextView repo;
         TextView user;
     }
@@ -50,12 +48,10 @@ public class EventsAdapter extends ArrayAdapter<Event> {
 			  
 			LayoutInflater inflater = LayoutInflater.from(getContext());
 			convertView = inflater.inflate(R.layout.item_event, null);
-//			viewHolder.id = (TextView) convertView.findViewById(R.id.tvId);
 			
 			viewHolder.repo = (TextView) convertView.findViewById(R.id.tvRepo);
 			viewHolder.user = (TextView) convertView.findViewById(R.id.tvUser);
 			
-//			viewHolder.type = (TextView) convertView.findViewById(R.id.tvType);
 			convertView.setTag(viewHolder);
 
 		} else {
@@ -66,12 +62,8 @@ public class EventsAdapter extends ArrayAdapter<Event> {
 		StringBuilder userString = new StringBuilder()
 			.append(event.user).append(" / ").append(event.type);
 		
-//		viewHolder.id.setText(event.id.toString());
-		
 		viewHolder.repo.setText(event.repo);
 		viewHolder.user.setText(userString.toString());
-		
-//		viewHolder.type.setText(event.type);
 		
 		// now images
 		ImageView ivBasicImage = (ImageView) convertView.findViewById(R.id.ivUserAvatar);
