@@ -3,6 +3,7 @@ package com.srlucas.github.eventviewer.network.github;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+import com.srlucas.github.eventviewer.network.RestClient;
 
 /**
  * Github rest client. All github related stuff is here.
@@ -17,8 +18,6 @@ public class GithubRestClient extends RestClient {
 	/** Base URL. */
 	private static final String BASE_URL = "https://api.github.com/";
 	
-	/** Actual client. */
-	private static AsyncHttpClient client = new AsyncHttpClient();
 
 	/** Do a GET request to the given URL
 	 * 
