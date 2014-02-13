@@ -1,7 +1,5 @@
 package com.srlucas.github.eventviewer.model;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -29,7 +27,7 @@ public class Event {
 			this.id = src.getLong("id");
 			this.type = src.getString("type");
 
-			String createdAt = src.getString("created_at");
+//			String createdAt = src.getString("created_at");
 			// TODO Fix this. Github returns dates as iso 8601 format and 
 			// 	simple date format does not supports this.
 //			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
