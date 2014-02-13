@@ -2,6 +2,7 @@ package com.srlucas.github.eventviewer.model;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -48,6 +49,13 @@ public class Event {
 			// user info
 			JSONObject user = src.getJSONObject("actor");
 			this.user = user.getString("login");
+			if (this.user == null) {
+				this.user = "NOUAN"; // TODO do something with no users
+				
+				if ("gistevent".equals(this.type.toLowerCase(Locale.US))) { // special case
+					this.user = "GIST";
+				}
+			}
 			this.userAvatarUrl = user.getString("avatar_url");
 			
 		} catch (JSONException e) {

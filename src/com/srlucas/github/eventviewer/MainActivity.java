@@ -1,6 +1,5 @@
 package com.srlucas.github.eventviewer;
 
-import java.io.File;
 import java.util.ArrayList;
 
 import org.json.JSONArray;
@@ -11,12 +10,9 @@ import android.widget.ListView;
 
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
-import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiscCache;
-import com.nostra13.universalimageloader.cache.disc.naming.HashCodeFileNameGenerator;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.nostra13.universalimageloader.utils.StorageUtils;
 import com.srlucas.github.R;
 import com.srlucas.github.eventviewer.model.Event;
 import com.srlucas.github.eventviewer.network.github.GithubRestClient;
