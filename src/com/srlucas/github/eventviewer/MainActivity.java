@@ -1,13 +1,13 @@
 package com.srlucas.github.eventviewer;
 
 import org.json.JSONArray;
-import org.json.JSONObject;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ListView;
 
 import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 import com.srlucas.github.R;
 import com.srlucas.github.eventviewer.network.github.GithubRestClient;
 
@@ -24,19 +24,26 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		fetchEventsAsync();
+		fetchEventsAsync(0);
 	}
 	
 	/**
 	 * Fetch events to show and populate ListView
+	 * 
+	 * @param page which page number to fetch
 	 */
-	private void fetchEventsAsync() {
-		GithubRestClient.get("events", null, new JsonHttpResponseHandler() {
-            @Override
-            public void onSuccess(JSONArray events) {
-            	// update listview
-            }
-        });
+	private void fetchEventsAsync(int page) {
+		
+		GithubRestClient.get("events", 
+				new RequestParams("page", page), 
+				new JsonHttpResponseHandler() {
+		            @Override
+		            public void onSuccess(JSONArray events) {
+		            	// update listview
+		            }
+				}
+		); // ascii art
+		
 	}
 
 }

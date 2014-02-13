@@ -9,6 +9,9 @@ import com.loopj.android.http.RequestParams;
  * 
  * Only GET requests are supported.
  * 
+ * TODO: Make sure we add support for ETAGs so we can properly use the 304 response
+ * 		code 
+ * 
  * @author srlucas
  *
  */
